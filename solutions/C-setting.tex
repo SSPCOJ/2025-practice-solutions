@@ -1,0 +1,29 @@
+\section{C. 출제하기}
+
+\begin{frame} % No title at first slide
+    \sectiontitle{C}{출제하기}
+    \sectionmeta{
+        \texttt{binary\_search}\\
+        출제진 의도 -- \textbf{\color{acgold}Medium}
+    }
+    \begin{itemize}
+        \item 제출 -번, 정답 -명 (정답률 -\%)
+        \item 처음 푼 사람: 없음, -분
+        \item 출제자: \texttt{skuru}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\textbf{C}. 출제하기}
+    \begin{itemize}
+        \item 각 문제를 $f(x) \le 10^8$인지 아닌지 판단하는 결정 문제로 바꾸어 생각해 봅시다.
+        \item 이분 탐색을 이용하면 $x$의 최댓값을 로그 시간에 구할 수 있습니다.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\textbf{C}. 출제하기}
+    \begin{itemize}
+        \item 닫힌 구간 $[1, 10^8]$에서 탐색하는 경우 $f(x)$의 값이 너무 커져 overflow가 일어날 수 있습니다.
+        \item $f(x) \le 10^8$을 만족하려면 $x$는 적어도 $\sqrt[d]{\frac{10^8}{c_d}}$보다 작거나 같아야 함을 이용해서 구간을 줄여서 탐색하면 됩니다.
+        \item $f(x)$를 계산하는 데 \complexity{d}이므로 각 문제를 시간 복잡도 \complexity{d\log\sqrt[d]{\frac{10^8}{c_d}}}에 해결할 수 있습니다.
+    \end{itemize}
+\end{frame}
