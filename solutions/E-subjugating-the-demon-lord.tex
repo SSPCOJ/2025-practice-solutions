@@ -1,0 +1,31 @@
+\section{E. 마왕 토벌}
+
+\begin{frame} % No title at first slide
+    \sectiontitle{E}{마왕 토벌}
+    \sectionmeta{
+        \texttt{dp, deque\_trick, dp\_deque}\\
+        출제진 의도 -- \textbf{\color{acplatinum}Hard}
+    }
+    \begin{itemize}
+        \item 제출 -번, 정답 -명 (정답률 -\%)
+        \item 처음 푼 사람: 없음, -분
+        \item 출제자: \texttt{skuru}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\textbf{E}. 마왕 토벌}
+    \begin{itemize}
+        \item $DP_i$를 $i$번째 층의 마물을 토벌하는 데 필요한 마력의 최솟값으로 정의합시다.
+        \item $DP_i$ 값에는 $i$층에 도달하는 데 까지의 마력도 포함됨에 유의합시다.
+        \item $DP_0 = 0$으로 둡시다.
+        \item $DP_i = \min_{i - K \le j < i}(DP_j) + m_i$의 점화식을 이용하여 $DP_i$를 구할 수 있습니다.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\textbf{E}. 마왕 토벌}
+    \begin{itemize}
+        \item 이를 naive하게 구현하면 시간 복잡도 \complexity{NK}이므로 시간 초과를 받습니다.
+        \item 덱을 이용한 구간 최솟값 트릭으로 \complexity{N}에 해결할 수 있습니다.
+        \item 이외에도 우선순위 큐나 세그먼트 트리를 이용해 \complexity{N\log K}에도 해결할 수 있습니다.
+    \end{itemize}
+\end{frame}
